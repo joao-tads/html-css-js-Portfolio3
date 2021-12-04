@@ -1,5 +1,5 @@
 /* ========= IMPORTS ========== */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&family=Ubuntu:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&family=Ubuntu:wght@400;500;700&Poppins:wght@300;400;500&display=swap');
 
 /* ========= RESET ========== */
 * {
@@ -11,7 +11,7 @@
 }
 
 *::-webkit-scrollbar {
-  width: 0.3rem; /* width of the entire scrollbar */
+  width: 0.5rem; /* width of the entire scrollbar */
 }
 
 *::-webkit-scrollbar-track {
@@ -20,19 +20,26 @@
 
 *::-webkit-scrollbar-thumb {
   background-color: var(--color-tl); /* color of the scroll thumb */
+  border-radius: 1rem;
 }
 /* ========= ROOT ========== */
 :root {
   /* colors */
   --color-tl: #5f0311;
+  --color-ac: #a3011a;
   --color-bg: #0f0d0f;
   --color-tx: #f2f2f2;
   /* fonts */
   --font-A: 'Roboto', sans-serif;
   --font-B: 'Ubuntu', sans-serif;
+  --font-C: 'Poppins', sans-serif;
   /* border */
   --border-a: 1px solid var(--color-tl);
   --border-b: 1px solid var(--color-tx);
+  /* shadow */
+  --shadow-tx: 0.1rem 0.1rem 0.1rem var(--color-bg);
+  --shadow-bx: 0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.7);
+  --shadow-bt: 0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.5);
 }
 /* ========= BASE ========== */
 .max-width {
@@ -41,6 +48,13 @@
   margin: auto;
 }
 
+section {
+  padding: 6.25rem 0;
+}
+
+section.home {
+  padding: 0;
+}
 /* ========= HEADER ========== */
 /* _________ navbar __________ */
 .navbar {
@@ -106,7 +120,10 @@
 /*___________ menu btn ___________*/
 .menu-btn {
   color: var(--color-tx);
+  padding: 1.5rem;
   font-size: 1.5rem;
+  cursor: pointer;
+  display: none;
 }
 /* ========= MAIN ========== */
 /* ___________ home ___________ */
@@ -138,8 +155,31 @@
   top: 40%;
   left: 6%;
 }
+
 .home .home-content {
-  text-shadow: 0.1rem 0.1rem 0.1rem var(--color-bg);
+  text-shadow: var(--shadow-tx);
+}
+
+.home .home-content a {
+  display: inline-block;
+  background-color: var(--color-tl);
+  color: var(--color-tx);
+  font-size: 1.6rem;
+  padding: 0.75rem 2.25rem;
+  margin-top: 1.25rem;
+  border-radius: 0.4rem;
+  box-shadow: var(--shadow-bx);
+  transition: all 0.3s ease;
+}
+
+.home .home-content a:hover {
+  background-color: var(--color-ac);
+}
+
+.home .home-content a:active {
+  margin-top: 1.42rem;
+  background-color: gray;
+  box-shadow: var(--shadow-bt);
 }
 
 .home .home-content .text_1 {
@@ -174,6 +214,80 @@
 }
 /* __________ about __________ */
 
+.about {
+  font-family: var(--font-C);
+  height: 100vh;
+}
+
+.about .title {
+  position: relative;
+  text-align: center;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-bottom: 3.75rem;
+  padding-bottom: 1.7rem;
+  font-family: var(--font-B);
+}
+
+.about .title span {
+  color: var(--color-ac);
+}
+
+.about .title::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 15rem;
+  height: 0.2rem;
+  background: var(--color-ac);
+  transform: translateX(-50%);
+}
+
+.about .title::after {
+  content: ' Quem eu sou ';
+  position: absolute;
+  bottom: -1rem;
+  left: 50%;
+  font-size: 1.25rem;
+  color: var(--color-tx);
+  padding: 0.4rem;
+  background: var(--color-ac);
+  transform: translateX(-50%);
+}
+
+.about .about-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.about .about-content .left {
+  width: 45%;
+}
+
+.about .about-content .left img {
+  width: 25rem;
+  height: 25rem;
+  object-fit: cover;
+  border-radius: 0.6rem;
+}
+
+.about .about-content .right {
+  width: 55%;
+}
+
+.about .about-content .right .text {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 0.625rem;
+}
+
+.about .about-content .right .text span {
+  color: var(--color-ac);
+}
 /* __________ services __________ */
 
 /* __________ specialty __________ */
@@ -185,4 +299,83 @@
 /* ========= FOOTER ========== */
 
 /* ========= RESPONSIVE ========== */
-/* __________ screen 1 */
+/* __________ screen 1024px desktop __________ */
+@media screen and (max-width: 1024px) {
+  .home .max-width {
+    margin-left: 0rem;
+  }
+}
+
+/* __________ screen 845px  table __________ */
+@media screen and (max-width: 845px) {
+  .max-width {
+    padding: 0 3.125rem;
+  }
+
+  .menu-btn {
+    display: block;
+    z-index: 999;
+  }
+
+  .navbar .menu {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: -100%;
+    background-color: var(--color-bg);
+    text-align: center;
+    padding-top: 5rem;
+    transition: all 0.3s ease;
+  }
+
+  .navbar .menu i.active:before {
+    content: '\f00d';
+  }
+
+  .navbar .menu.active {
+    left: 0;
+  }
+
+  .navbar .menu li {
+    display: block;
+  }
+
+  .navbar .menu li a {
+    display: inline-block;
+    margin: 1.25rem 0;
+    font-size: 1.6rem;
+  }
+
+  .home .home-content .text_2 {
+    font-size: 4.4rem;
+  }
+
+  .home .home-content .text_3 {
+    font-size: 2.2rem;
+  }
+
+  .home .home-content a {
+    font-size: 1.5rem;
+    padding: 0.7rem 2rem;
+  }
+}
+
+/* __________ screen 555px smartphone __________ */
+@media screen and (max-width: 555px) {
+  .max-width {
+    padding: 0 1.5rem;
+  }
+  .home .home-content .text_2 {
+    font-size: 3.643rem;
+  }
+
+  .home .home-content .text_3 {
+    font-size: 2rem;
+  }
+
+  .home .home-content a {
+    font-size: 1.2rem;
+    padding: 0.5rem 1.7rem;
+  }
+}
