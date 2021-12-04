@@ -36,6 +36,7 @@
   /* border */
   --border-a: 1px solid var(--color-tl);
   --border-b: 1px solid var(--color-tx);
+  --border-s: 1px solid var(--color-ac);
   /* shadow */
   --shadow-tx: 0.1rem 0.1rem 0.1rem var(--color-bg);
   --shadow-bx: 0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.7);
@@ -49,11 +50,55 @@
 }
 
 section {
-  padding: 6.25rem 0;
+  padding-top: 6.25rem;
+  border-bottom: var(--border-s);
 }
 
 section.home {
   padding: 0;
+}
+
+section .title {
+  position: relative;
+  text-align: center;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-bottom: 3.75rem;
+  padding-bottom: 1.7rem;
+  font-family: var(--font-B);
+}
+
+section .title span {
+  color: var(--color-ac);
+}
+
+section .title::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 15rem;
+  height: 0.2rem;
+  background: var(--color-ac);
+  transform: translateX(-50%);
+}
+
+section .title::after {
+  position: absolute;
+  bottom: -1rem;
+  left: 50%;
+  font-size: 1.25rem;
+  color: var(--color-tx);
+  padding: 0.4rem;
+  background: var(--color-ac);
+  transform: translateX(-50%);
+}
+
+.about,
+.services {
+  font-family: var(--font-C);
+  height: 100vh;
 }
 /* ========= HEADER ========== */
 /* _________ navbar __________ */
@@ -213,48 +258,8 @@ section.home {
   }
 }
 /* __________ about __________ */
-
-.about {
-  font-family: var(--font-C);
-  height: 100vh;
-}
-
-.about .title {
-  position: relative;
-  text-align: center;
-  font-size: 2.5rem;
-  text-transform: uppercase;
-  font-weight: 500;
-  margin-bottom: 3.75rem;
-  padding-bottom: 1.7rem;
-  font-family: var(--font-B);
-}
-
-.about .title span {
-  color: var(--color-ac);
-}
-
-.about .title::before {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 15rem;
-  height: 0.2rem;
-  background: var(--color-ac);
-  transform: translateX(-50%);
-}
-
 .about .title::after {
-  content: ' Quem eu sou ';
-  position: absolute;
-  bottom: -1rem;
-  left: 50%;
-  font-size: 1.25rem;
-  color: var(--color-tx);
-  padding: 0.4rem;
-  background: var(--color-ac);
-  transform: translateX(-50%);
+  content: 'Quem sou eu';
 }
 
 .about .about-content {
@@ -288,7 +293,73 @@ section.home {
 .about .about-content .right .text span {
   color: var(--color-ac);
 }
+
+.about .about-content .right p {
+  text-align: justify;
+}
+
+.about .about-content .right a {
+  display: inline-block;
+  background-color: var(--color-tl);
+  color: var(--color-tx);
+  font-size: 1.3rem;
+  padding: 0.5rem 2rem;
+  margin-top: 1.25rem;
+  border-radius: 0.4rem;
+  box-shadow: var(--shadow-bx);
+  transition: all 0.3s ease;
+}
+
+.about .about-content .right a:hover {
+  background-color: var(--color-ac);
+}
+
+.about .about-content .right a:active {
+  margin-top: 1.42rem;
+  background-color: gray;
+  box-shadow: var(--shadow-bt);
+}
 /* __________ services __________ */
+.services {
+  color: var(--color-tx);
+  background: var(--color-bg);
+}
+
+.services .title::after {
+  content: 'O que eu faço';
+}
+
+.services .services-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.services .services-content .card {
+  width: calc(33% - 1.25rem);
+  background: #222;
+  text-align: center;
+  border-radius: 0.4rem;
+  padding: 1.25rem 1.57rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.services .services-content .card:hover {
+  background-color: rgb(61, 61, 61);
+  transform: scale(1.1, 1.1);
+}
+
+.services .services-content .card svg {
+  font-size: 3.3rem;
+  color: var(--color-ac);
+}
+
+.services .services-content .card .text {
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin: 0.63rem 0 0.5rem 0;
+}
 
 /* __________ specialty __________ */
 
@@ -299,17 +370,33 @@ section.home {
 /* ========= FOOTER ========== */
 
 /* ========= RESPONSIVE ========== */
-/* __________ screen 1024px desktop __________ */
-@media screen and (max-width: 1024px) {
+/* __________ screen 1440px desktop __________ */
+@media screen and (max-width: 1440px) {
   .home .max-width {
     margin-left: 0rem;
+  }
+}
+
+/* __________ screen 1080px desktop __________ */
+@media screen and (max-width: 1080px) {
+  .about .about-content .left img {
+    width: 22rem;
+    height: 22rem;
+  }
+}
+
+/* __________ screen 960px desktop __________ */
+@media screen. and (max-width: 960px) {
+  .about .about-content .left img {
+    width: 18rem;
+    height: 18rem;
   }
 }
 
 /* __________ screen 845px  table __________ */
 @media screen and (max-width: 845px) {
   .max-width {
-    padding: 0 3.125rem;
+    max-width: 800px;
   }
 
   .menu-btn {
@@ -327,10 +414,6 @@ section.home {
     text-align: center;
     padding-top: 5rem;
     transition: all 0.3s ease;
-  }
-
-  .navbar .menu i.active:before {
-    content: '\f00d';
   }
 
   .navbar .menu.active {
@@ -358,6 +441,20 @@ section.home {
   .home .home-content a {
     font-size: 1.5rem;
     padding: 0.7rem 2rem;
+  }
+
+  .about .about-content .column {
+    width: 50%;
+  }
+
+  .about .about-content .left {
+    display: flex;
+    align-items: center;
+    margin: 0 auto 3.75rem;
+  }
+
+  .about .about-content .right {
+    flex: 100%;
   }
 }
 
