@@ -8,13 +8,16 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="./src/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+    />
 
-    <!-- jQwuery -->
-    <script
-      src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
-      integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
-      crossorigin="anonymous"
-    ></script>
+    <!-- SCRIPTS CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
     <!-- TITLE -->
     <link
       rel="apple-touch-icon"
@@ -48,7 +51,7 @@
             <li><a href="#about">Sobre</a></li>
             <li><a href="#services">Serviços</a></li>
             <li><a href="#skills">Habilidades</a></li>
-            <li><a href="#team">Equipe</a></li>
+            <li><a href="#teams">Equipe</a></li>
             <li><a href="#contact">Contato</a></li>
           </ul>
           <div class="menu-btn">
@@ -225,7 +228,59 @@
       </section>
       <!-- specialty -->
 
-      <section class="team" id="team"></section>
+      <section class="teams" id="teams">
+        <div class="max-width">
+          <h2 class="title">Meu Time</h2>
+          <div class="carousel owl-carousel">
+            <div class="card">
+              <div class="box">
+                <img src="./src/img/profile_1.jpg" alt="profile 1" />
+                <div class="text">Donald Fernandez</div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+              </div>
+            </div>
+            <!-- car -->
+
+            <div class="card">
+              <div class="box">
+                <img src="./src/img/profile_2.jpg" alt="profile 1" />
+                <div class="text">Byron Hall</div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+              </div>
+            </div>
+            <!-- car -->
+
+            <div class="card">
+              <div class="box">
+                <img src="./src/img/profile_3.jpg" alt="profile 1" />
+                <div class="text">Hunter Mckinney</div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+              </div>
+            </div>
+            <!-- car -->
+
+            <div class="card">
+              <div class="box">
+                <img src="./src/img/profile_4.jpg" alt="profile 1" />
+                <div class="text">Perú Gulúgulu</div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+              </div>
+            </div>
+            <!-- car -->
+
+            <div class="card">
+              <div class="box">
+                <img src="./src/img/profile_5.jpg" alt="profile 1" />
+                <div class="text">Dog Invocado</div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+              </div>
+            </div>
+            <!-- car -->
+          </div>
+          <!-- carousel -->
+        </div>
+        <!-- max-width -->
+      </section>
       <!-- team -->
 
       <section class="contact" id="contact"></section>

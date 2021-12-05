@@ -45,12 +45,11 @@
 /* ========= BASE ========== */
 .max-width {
   max-width: 1200px;
-  padding: 0 5rem;
   margin: auto;
 }
 
 section {
-  padding-top: 4rem;
+  padding-top: 0.1rem;
   border-bottom: var(--border-s);
 }
 
@@ -99,7 +98,6 @@ section .title::after {
 .services,
 .skills {
   font-family: var(--font-C);
-  height: 100vh;
 }
 
 .about .about-content,
@@ -109,8 +107,23 @@ section .title::after {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
+  padding-bottom: 5rem;
+  height: 100vh;
 }
 
+.services,
+.teams {
+  color: var(--color-tx);
+  background: var(--color-bg);
+}
+
+.text {
+  font-size: 2rem;
+}
+
+p {
+  font-size: 1.6rem;
+}
 /* ========= HEADER ========== */
 /* _________ navbar __________ */
 .navbar {
@@ -286,7 +299,7 @@ section .title::after {
 }
 
 .about .about-content .right .text {
-  font-size: 1.6rem;
+  font-size: 2rem;
   font-weight: 600;
   margin-bottom: 0.625rem;
 }
@@ -321,11 +334,6 @@ section .title::after {
   box-shadow: var(--shadow-bt);
 }
 /* __________ services __________ */
-.services {
-  color: var(--color-tx);
-  background: var(--color-bg);
-}
-
 .services .title::after {
   content: 'O que eu faço';
 }
@@ -335,7 +343,7 @@ section .title::after {
   background: #222;
   text-align: center;
   border-radius: 0.4rem;
-  padding: 1.25rem 1.57rem;
+  padding: 5rem 1.57rem;
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -351,7 +359,6 @@ section .title::after {
 }
 
 .services .services-content .card .text {
-  font-size: 1.6rem;
   font-weight: bold;
   margin: 0.63rem 0 0.5rem 0;
 }
@@ -366,7 +373,6 @@ section .title::after {
 }
 
 .skills .skills-content .left .text {
-  font-size: 1.25rem;
   font-weight: 600;
   margin-bottom: 0.625rem;
 }
@@ -449,6 +455,48 @@ section .title::after {
   width: 70%;
 }
 /* __________ team __________ */
+.teams .title::after {
+  content: 'Esta comigo';
+}
+
+.teams .carousel .card {
+  background: #222;
+  border-radius: 6px;
+  padding: 1.6rem 2.2rem;
+  transition: all 0.3s ease;
+}
+
+.teams .carousel .card:hover {
+  background: var(--color-tl);
+}
+
+.teams .carousel .card .box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.teams .carousel .card .text {
+  font-weight: 500;
+  max-width: 0.625rem 0 0.33rem 0;
+}
+
+.teams .carousel .card img {
+  width: 10rem;
+  height: 10rem;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid var(--color-tl);
+  transition: all 0.3s ease;
+  margin-bottom: 1rem;
+}
+
+.teams .carousel .card:hover img {
+  transform: scale(1.1);
+  border: solid var(--color-tx);
+}
 
 /* __________ contact __________ */
 
@@ -464,8 +512,6 @@ section .title::after {
 
 /* __________ screen 1080px desktop __________ */
 @media screen and (max-width: 1080px) {
-  .about .about-content .card {
-  }
   .about .about-content .left img {
     width: 18rem;
     height: 18rem;
