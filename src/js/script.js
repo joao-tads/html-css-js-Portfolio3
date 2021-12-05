@@ -13,4 +13,11 @@ $(document).ready(() => {
     $('.fa-bars').toggleClass('fa-times')
     $('.fa-times').toggleClass('fa-bars')
   })
+
+  /* fechar menu ao clicar */
+  $('.navbar .menu li a').click(() => {
+    $('.navbar .menu').toggleClass('active')
+    $('.fa-bars').toggleClass('fa-times')
+    $('.fa-times').toggleClass('fa-bars')
+  })
 })

@@ -50,7 +50,7 @@
 }
 
 section {
-  padding-top: 6.25rem;
+  padding-top: 4rem;
   border-bottom: var(--border-s);
 }
 
@@ -64,7 +64,7 @@ section .title {
   font-size: 2.5rem;
   text-transform: uppercase;
   font-weight: 500;
-  margin-bottom: 3.75rem;
+  margin: 3.75rem 0;
   padding-bottom: 1.7rem;
   font-family: var(--font-B);
 }
@@ -96,10 +96,21 @@ section .title::after {
 }
 
 .about,
-.services {
+.services,
+.skills {
   font-family: var(--font-C);
   height: 100vh;
 }
+
+.about .about-content,
+.services .services-content,
+.skills .skills-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
 /* ========= HEADER ========== */
 /* _________ navbar __________ */
 .navbar {
@@ -262,17 +273,6 @@ section .title::after {
   content: 'Quem sou eu';
 }
 
-.about .about-content {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.about .about-content .left {
-  width: 45%;
-}
-
 .about .about-content .left img {
   width: 25rem;
   height: 25rem;
@@ -281,6 +281,7 @@ section .title::after {
 }
 
 .about .about-content .right {
+  display: block;
   width: 55%;
 }
 
@@ -329,12 +330,6 @@ section .title::after {
   content: 'O que eu faço';
 }
 
-.services .services-content {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
 .services .services-content .card {
   width: calc(33% - 1.25rem);
   background: #222;
@@ -361,8 +356,98 @@ section .title::after {
   margin: 0.63rem 0 0.5rem 0;
 }
 
-/* __________ specialty __________ */
+/* __________ skills __________ */
+.skills .title::after {
+  content: 'O que eu sei';
+}
 
+.skills .skills-content .column {
+  width: calc(50% - 1.88rem);
+}
+
+.skills .skills-content .left .text {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.625rem;
+}
+
+.skills .skills-content .left p {
+  text-align: justify;
+}
+
+.skills .skills-content .left a {
+  display: inline-block;
+  background-color: var(--color-tl);
+  color: var(--color-tx);
+  font-size: 1.3rem;
+  padding: 0.5rem 2rem;
+  margin-top: 1.25rem;
+  border-radius: 0.4rem;
+  box-shadow: var(--shadow-bx);
+  transition: all 0.3s ease;
+}
+
+.skills .skills-content .left a:hover {
+  background-color: var(--color-ac);
+}
+
+.skills .skills-content .left a:active {
+  margin-top: 1.42rem;
+  background-color: gray;
+  box-shadow: var(--shadow-bt);
+}
+
+.skills .skills-content .right .bars {
+  margin-bottom: 1rem;
+}
+
+.skills .skills-content .right .info {
+  display: flex;
+  margin-bottom: 0.33rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.skills .skills-content .right span {
+  font-weight: 500;
+  font-size: 1.13rem;
+}
+
+.skills .skills-content .right .line {
+  height: 0.32rem;
+  width: 100%;
+  background-color: gray;
+  position: relative;
+}
+
+.skills .skills-content .right .line::before {
+  content: '';
+  position: absolute;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: var(--color-ac);
+}
+
+.skills .skills-content .right .html::before {
+  width: 90%;
+}
+
+.skills .skills-content .right .css::before {
+  width: 60%;
+}
+
+.skills .skills-content .right .js::before {
+  width: 80%;
+}
+
+.skills .skills-content .right .php::before {
+  width: 90%;
+}
+
+.skills .skills-content .right .sql::before {
+  width: 70%;
+}
 /* __________ team __________ */
 
 /* __________ contact __________ */
@@ -379,14 +464,20 @@ section .title::after {
 
 /* __________ screen 1080px desktop __________ */
 @media screen and (max-width: 1080px) {
+  .about .about-content .card {
+  }
   .about .about-content .left img {
-    width: 22rem;
-    height: 22rem;
+    width: 18rem;
+    height: 18rem;
+  }
+
+  .about .about-content .right .text {
+    font-size: 1.6rem;
   }
 }
 
 /* __________ screen 960px desktop __________ */
-@media screen. and (max-width: 960px) {
+@media screen and (max-width: 960px) {
   .about .about-content .left img {
     width: 18rem;
     height: 18rem;
@@ -396,7 +487,7 @@ section .title::after {
 /* __________ screen 845px  table __________ */
 @media screen and (max-width: 845px) {
   .max-width {
-    max-width: 800px;
+    padding: 0 1.5rem;
   }
 
   .menu-btn {
@@ -430,6 +521,10 @@ section .title::after {
     font-size: 1.6rem;
   }
 
+  .home {
+    margin: 0;
+  }
+
   .home .home-content .text_2 {
     font-size: 4.4rem;
   }
@@ -443,18 +538,40 @@ section .title::after {
     padding: 0.7rem 2rem;
   }
 
-  .about .about-content .column {
-    width: 50%;
+  .home .home-content .card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .about .about-content .left {
+    width: 15rem;
+    height: 15rem;
   }
 
   .about .about-content .left {
     display: flex;
     align-items: center;
+    justify-content: center;
     margin: 0 auto 3.75rem;
+    width: 100%;
   }
 
   .about .about-content .right {
     flex: 100%;
+    padding: 0 10%;
+  }
+
+  section.about,
+  section.skills {
+    height: 100%;
+    padding-bottom: 3rem;
+  }
+
+  .skills .skills-content .column {
+    width: 100%;
+    margin-bottom: 2rem;
   }
 }
 
@@ -474,5 +591,26 @@ section .title::after {
   .home .home-content a {
     font-size: 1.2rem;
     padding: 0.5rem 1.7rem;
+  }
+}
+
+/* __________ screen 425px smartphone __________ */
+@media screen and (max-width: 555px) {
+  .about .about-content .left {
+    margin-top: 1rem;
+  }
+
+  section.services {
+    height: 100%;
+    padding-bottom: 3rem;
+  }
+
+  .services .max-width .services-content {
+    display: block;
+  }
+
+  .services .max-width .services-content .card {
+    width: 100%;
+    margin-bottom: 1rem;
   }
 }
